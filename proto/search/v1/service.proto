@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package search.v1;
+
+option go_package = "github.com/paulja/go-arch/proto/search";
+
+message FindUsersRequest {
+  string expression = 1;
+}
+
+message FindUsersResponse {
+  repeated string users = 1;
+}
+
+service SearchService {
+  rpc FindUsers(FindUsersRequest) returns (FindUsersResponse) {}
+}
